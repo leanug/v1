@@ -9,9 +9,7 @@ import sections from '../constants/sections'
 const IndexPage = () => {
     return (
         <Layout>
-            <Seo 
-                title="Home"
-            />
+            <Seo />
             <article className="wrapper-fluid mt-100 mb-160">
                 <section className="section-mb">
                     <h1 className="display-two">
@@ -41,7 +39,6 @@ const IndexPage = () => {
                     <SectionTitle data={ sections[ 3 ] } />
                     <a href="mailto:leandroubilla@protonmail.com" className="display-two">Say Hi to Leandro</a><br />
                     <a href="https://github.com/leanug" className="display-two">GitHub</a><br />
-                    <a href="https://instagram.com/leanugram" className="display-two">Instagram</a>
                 </section>
             </article>
         </Layout>

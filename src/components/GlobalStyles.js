@@ -3,10 +3,12 @@ import { createGlobalStyle } from 'styled-components'
 const Globals = createGlobalStyle`
     :root {
         --primary-font: "Rubik", Roboto, Helvetica, Arial, sans-serif;
+        --secondary-font: 'VT323', monospace;
         --radius-alpha: 0.5rem;
         --radius-beta: 1rem;
         --radius-gamma: 50%;
         --line-heigh-alpha: 1.5;
+        --max-width: 132rem;
     }
 
     *,
@@ -32,7 +34,7 @@ const Globals = createGlobalStyle`
     }
 
     .wrapper {
-        max-width: 132rem;
+        max-width: var(--max-width);
         margin: auto;
         padding-left: 2rem;
         padding-right: 2rem;

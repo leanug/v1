@@ -8,22 +8,6 @@ const data = [
         git: 'https://github.com/leanug/movienation'
     },
     {
-        title: 'How to Choose Best Bike For Spring In Australia',
-        categories: 'react',
-        image: '',
-        text: 'Andrea provides architecture and interior design services, developing projects at a residential, commercial and corporate level.',
-        live: 'http://website.live',
-        git: 'https://github.com/leanug'
-    },
-    {
-        title: 'How to Choose Best Bike For Spring In Australia',
-        categories: 'react',
-        image: '',
-        text: 'Marcos is an expert in sustainable architectural development and autonomous building without services that are not connected to the grid. ',
-        live: 'http://website.live',
-        git: 'https://github.com/leanug'
-    },
-    {
         title: 'Gatsby website',
         categories: 'gatsby, styled components',
         image: '',

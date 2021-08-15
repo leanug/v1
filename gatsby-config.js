@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Leandro Ubilla Gonzalez`,
-    description: `Leandro is a front end web developer who specializes in building performant react websites and pwas.`,
+    description: `Leandro is a front end web developer who specializes in building accessible and performant react websites.`,
     author: `Leandro Ubilla Gonzalez`,
   },
   plugins: [
@@ -51,23 +51,16 @@ module.exports = {
       resolve: `gatsby-plugin-webfonts`,
       options: {
         fonts: {
-          google: [
-            {
-              family: "VT323",
-              fontDisplay: 'swap',
-              strategy: 'selfHosted',
-            },
+          google2: [
             {
               family: "Rubik",
-              variants: ["400", "500", "600", "700"],
-              fontDisplay: 'swap',
-              strategy: 'selfHosted',
+              axes: "wght@300;400;500;600;700",
+            },
+            {
+              family: "VT323",
             },
           ],
         },
-        useMinify: true,
-        usePreload: false,
-        usePreconnect: false,
       },
     },
   ],

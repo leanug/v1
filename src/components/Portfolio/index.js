@@ -12,17 +12,7 @@ const Portfolio = () => {
                 gatsbyImageData 
             }
         }
-        placeholderImage2: file(relativePath: {eq: "projects/p2.png"}) {
-          childImageSharp {
-              gatsbyImageData 
-          }
-        }
-        placeholderImage3: file(relativePath: {eq: "projects/p3.png"}) {
-          childImageSharp {
-              gatsbyImageData 
-          }
-        }
-        placeholderImage4: file(relativePath: {eq: "projects/distrial.jpg"}) {
+        placeholderImage2: file(relativePath: {eq: "projects/distrial.jpg"}) {
           childImageSharp {
               gatsbyImageData 
           }

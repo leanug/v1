@@ -6,7 +6,7 @@ const SectionTitle = ({ data: { name, svg }}) => {
         <Wrapper>
             <div className="grid">
                 <img src={ svg } alt="About me section" />
-                <h2>{ name }</h2>
+                <h3>{ name }</h3>
             </div>
         </Wrapper>
     )
@@ -15,6 +15,7 @@ const SectionTitle = ({ data: { name, svg }}) => {
 const Wrapper = styled.div`
     display: flex;
     margin-bottom: 3rem;
+    align-items: baseline;
 
     .grid {
         display: grid;
@@ -33,11 +34,17 @@ const Wrapper = styled.div`
         }
     }
 
-    h2 {
+    h3 {
         grid-area: a;
         justify-self: center;
         align-self: center;
-        font-weight: 500;
+        font-weight: 600;
+    }
+
+    .icon {
+        height: 2rem;
+        margin-left: 1rem;
+        width: 2rem;
     }
 
     @media screen and (max-width: 576px) {

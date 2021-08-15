@@ -4,7 +4,11 @@ import styled from 'styled-components'
 
 const Navbar = ({ toggleTheme }) => {
   return (
-    <Header>
+    <Header className="wrapper-fluid">
+      <div>
+        <span className="logo">L:&#10095; UG</span>
+        <div className="cursor"></div>
+      </div>
       <button
           aria-label="Dark or light website theme toggler"
           onClick={ toggleTheme }
@@ -20,17 +24,34 @@ const Header = styled.header`
   align-items: center;
   background-color: transparent;
   display: flex;
-  padding: 0 2rem;
   transition: color 0.3s linear;
-  width: 100%;
   height: 8rem;
-  justify-content: flex-end;
+  justify-content: space-between;
   
+  .logo {
+    font-family: var(--secondary-font);
+    font-size: 2rem;
+  }
+
+  .cursor {
+    background: lime;
+    display: inline-block;
+    line-height: 17px;
+    margin-left: 3px;
+    animation: blink 0.8s infinite;
+    width: 7px;
+    height: 2px;
+  }
+
+  @keyframes blink {
+    0% {background: ${({ theme }) => theme.psi }}
+    50% {background: ${({ theme }) => theme.omega }}
+    100% {background: ${({ theme }) => theme.psi }}
+  }
+
   .theme-toggler {
     align-items: center;
-    height: 48px;
     justify-content: center;
-    width: 48px;
   }
 
   .moon {
@@ -38,6 +59,10 @@ const Header = styled.header`
     height: auto;
     transition: all 0.25s linear;
     width: 2rem;
+
+    @media screen and ( max-width: 768px ) {
+      width: 4rem;
+    }
   }
 
   button {
