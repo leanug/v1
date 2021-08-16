@@ -12,7 +12,7 @@ const IndexPage = () => {
             <Seo />
             <article className="wrapper-fluid mt-100 mb-160">
                 <section className="section-mb">
-                    <h1 className="display-two">
+                    <h1 className="display-two" >
                         Hello, I'm Leandro, a Web Developer from Uruguay. 
                         My main focus is developing accessible and performant websites.
                     </h1>
@@ -25,10 +25,15 @@ const IndexPage = () => {
                     <SectionTitle data={ sections[ 0 ] } />
                     <p className="display-two">
                         I took my first steps in web development with html and css, making free themes for Myspace.
+                    </p>
+                    <p className="display-two">
                         From 2010 to 2016 I ran a network of niche websites made with php.
+                    </p>
+                    <p className="display-two">
                         After that I worked as a freelancer building and fixing WordPress websites and themes.
-                        Eventually, I grew tired of php and migrated to javascript. 
-                        I've been working with React.js ever since.
+                    </p>
+                    <p className="display-two">
+                        Eventually I migrated to javascript and I've been working with React.js ever since.
                     </p>
                 </section>
                 <section className="section-mb">
@@ -37,8 +42,13 @@ const IndexPage = () => {
                 </section>
                 <section>
                     <SectionTitle data={ sections[ 3 ] } />
-                    <a href="mailto:leandroubilla@protonmail.com" className="display-two">Say Hi to Leandro</a><br />
-                    <a href="https://github.com/leanug" className="display-two">GitHub</a><br />
+                    <a href="mailto:leandroubilla@protonmail.com" className="display-two">
+                        Say Hi to Leandro
+                    </a>
+                    <br />
+                    <a href="https://github.com/leanug" className="display-two">
+                        GitHub
+                    </a>
                 </section>
             </article>
         </Layout>

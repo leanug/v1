@@ -2,7 +2,7 @@ import React from 'react'
 import { BsMoon } from 'react-icons/bs'
 import styled from 'styled-components'
 
-const Navbar = ({ toggleTheme }) => {
+const Navbar = ({ toggleTheme, toggleDos }) => {
   return (
     <Header className="wrapper-fluid">
       <div>
@@ -14,7 +14,7 @@ const Navbar = ({ toggleTheme }) => {
           onClick={ toggleTheme }
           className="theme-toggler"
         >
-          <BsMoon className="moon" />
+          <BsMoon className="icon" />
       </button>
     </Header>
   )
@@ -54,7 +54,7 @@ const Header = styled.header`
     justify-content: center;
   }
 
-  .moon {
+  .icon {
     color: ${({ theme }) => theme.psi };
     height: auto;
     transition: all 0.25s linear;

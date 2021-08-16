@@ -8,6 +8,7 @@
  import React, { useState, useEffect } from 'react'
  import BackToTopBtn from './BackToTopBtn'
  import GlobalStyles from './GlobalStyles'
+ import Footer from './Footer'
  import Header from './Header'
  import { lightTheme, darkTheme } from '../theme';
  import 'normalize.css'
@@ -47,11 +48,12 @@
        <PageWrapper>
          <Header
            theme={ theme }
-           toggleTheme={ toggleTheme } 
+           toggleTheme={ toggleTheme }
          />
          <main>
            { children }
          </main>
+         <Footer />
        </PageWrapper>
      </ThemeProvider>
    )

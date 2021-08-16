@@ -1,7 +1,7 @@
 export const lightTheme = {
     name:       'light',
     alpha:      '#131313', 
-    beta:       '#D0E9FE', 
+    beta:       '#6EFFA8', 
     gamma:      '#F6F6F6', 
     psi:        '#333333',
     omega:      '#FFFFFF',
@@ -12,7 +12,7 @@ export const lightTheme = {
 export const darkTheme = {
     name:       'dark',
     alpha:      '#6EFFA8', 
-    beta:       '#FFFFFF',
+    beta:       '#131313',
     gamma:      '#1C2025', 
     psi:        '#FFFFFF',
     omega:      '#333333',

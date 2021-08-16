@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { BsChevronUp } from 'react-icons/bs'
+import { FaArrowUp } from 'react-icons/fa'
 import styled, { css } from 'styled-components'
 
 const BackToTopBtn = () => {
@@ -36,7 +36,7 @@ const BackToTopBtn = () => {
             onKeyDown={ scrollToTop }
             showButton={ showButton }
         >
-            <BsChevronUp />
+            <FaArrowUp />
         </Button>
     )
 }

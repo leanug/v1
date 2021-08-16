@@ -1,14 +1,8 @@
 import React from 'react'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-//import { BsArrowRightShort } from 'react-icons/bs'
-//import PropTypes from 'prop-types'
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 import styled from 'styled-components'
 
-/**
- * Displays a single portfolio card
- * 
- * @param { object } 
- */
 const Item = ({ categories, title, image, text, live, git }) => {
     const img = getImage( image )
     const categoriesAry = categories.split(',')
@@ -29,8 +23,8 @@ const Item = ({ categories, title, image, text, live, git }) => {
                 ))}
                 <p className="mt-10">{ text }</p>
                 <div className="links">
-                    { live && <a href={ live }>Live site</a> }
-                    { git && <a href={ git }>GitHub</a> }
+                    { live && <a className="link" href={ live }><FaExternalLinkAlt /><span>live site</span></a> }
+                    { git && <a className="link" href={ git }><FaGithub /><span>github</span></a> }
                 </div>
             </div>
         </Wrapper>
@@ -59,6 +53,15 @@ const Wrapper = styled.article`
     
     span {
         font-size: 1.4rem;
+    }
+
+    .link {
+        display: flex;
+        align-items: center;
+
+        span {
+            margin-left: 1rem;
+        }
     }
     
     .category {

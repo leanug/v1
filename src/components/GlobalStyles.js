@@ -289,6 +289,14 @@ const Globals = createGlobalStyle`
         margin-bottom: 16rem;
     }
 
+    .ml-10 {
+        margin-left: 1rem;
+    }
+
+    .mr-10 {
+        margin-right: 1rem;
+    }
+
     .mx-auto {
         margin-left: auto;
         margin-right: auto;
