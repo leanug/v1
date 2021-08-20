@@ -10,30 +10,30 @@ const Portfolio = () => {
             placeholderImage1: file(relativePath: {eq: "projects/movienation.jpg"}) {
                 childImageSharp {
                     gatsbyImageData (
-                        quality: 100
+                        quality: 75
                         height: 350
                         width: 580
-                        transformOptions: {fit: COVER}
+                        placeholder: BLURRED
                     )
                 }
             }
             placeholderImage2: file(relativePath: {eq: "projects/githubster.jpg"}) {
                 childImageSharp {
                     gatsbyImageData (
-                        quality: 100
+                        quality: 75
                         height: 350
                         width: 580
-                        transformOptions: {fit: COVER}
+                        placeholder: BLURRED
                     )
                 }
             }
             placeholderImage3: file(relativePath: {eq: "projects/distrial.jpg"}) {
                 childImageSharp {
                     gatsbyImageData (
-                        quality: 100
+                        quality: 75
                         height: 350
                         width: 580
-                        transformOptions: {fit: COVER}
+                        placeholder: BLURRED
                     )
                 }
             }
