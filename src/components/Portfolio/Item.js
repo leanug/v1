@@ -10,7 +10,7 @@ const Item = ({ categories, title, image, text, live, git }) => {
     return (
         <Wrapper>
             { image && 
-                <a href={ live }>
+                <a className="link-img" href={ live }>
                     <GatsbyImage imgClassName="img" image={ img } alt={ title } />
                 </a>
             }
@@ -18,9 +18,11 @@ const Item = ({ categories, title, image, text, live, git }) => {
                 <a href={ live }>
                     <h3 className="mb-10">{ title }</h3>
                 </a>
-                { categoriesAry.map(( cat, index ) => (
-                    <span className="category" key={ index }>{ cat }</span>
-                ))}
+                <div>
+                    { categoriesAry.map(( cat, index ) => (
+                        <span className="category" key={ index }>{ cat }</span>
+                    ))}
+                </div>
                 <p className="mt-10">{ text }</p>
                 <div className="links">
                     { live && <a className="link" href={ live }><FaExternalLinkAlt /><span>live site</span></a> }
@@ -32,23 +34,34 @@ const Item = ({ categories, title, image, text, live, git }) => {
 } 
   
 const Wrapper = styled.article`
-    border-radius: var(--radius-beta);
-    position: relative;
-    overflow: hidden;
-
-    .container {
-        margin-top: 2rem;
-    }
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
 
     .img {
         border-radius: var(--radius-alpha);
         filter: grayscale(100%);
         transition: filter 0.25s linear;
-        z-index: 0;
 
         &:hover {
             filter: grayscale(0);
         }
+    }
+
+    .link-img {       
+        display: inline-block;
+        margin-bottom: 3rem;
+ 
+        @media screen and ( min-width: 920px ) {
+            margin-bottom: 6rem;
+        }
+    }
+
+    .category {
+        text-transform: capitalize;
+        margin-right: 2rem;
+        height: 100%;
+        width: 100%;
     }
     
     span {
@@ -63,24 +76,21 @@ const Wrapper = styled.article`
             margin-left: 1rem;
         }
     }
-    
-    .category {
-        text-transform: capitalize;
-        margin-right: 2rem;
-    }
-
-    h4{ 
-        color: ${({ theme }) => theme.colorOmegaFixed };
-    }
 
     .links {
         display: flex;
         align-items: center;
         margin-top: 2rem;
+        align-self: baseline;
 
         a {
             margin-right: 2rem;
         }
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
     }
 
     .icon {
@@ -89,12 +99,6 @@ const Wrapper = styled.article`
         position: relative;
         right: 0;
         transition: right linear 0.25s;
-    }
-
-    &:hover {
-        .icon {
-            right: -8px;
-        }
     }
 `
   

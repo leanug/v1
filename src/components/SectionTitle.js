@@ -1,57 +1,35 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
-const SectionTitle = ({ data: { name, svg }}) => {
+const SectionTitle = ({ title, number}) => {
     return (
         <Wrapper>
-            <div className="grid">
-                <img src={ svg } alt="About me section" />
-                <h3>{ name }</h3>
-            </div>
+            <span>{ number }</span>
+            <span>{ title }</span>
+            <Line />
         </Wrapper>
     )
 }
 
 const Wrapper = styled.div`
-    display: flex;
+    font-family: var(--secondary-font);
+    font-size: 2rem;
     margin-bottom: 3rem;
-    align-items: baseline;
 
-    .grid {
-        display: grid;
-        grid-template-areas: a;
+    span:first-child {
+        margin-right: 1rem;
+        font-size: 1.4rem;
     }
+`
 
-    img {
-        grid-area: a;
-        ${({ theme }) => theme.name === 'dark'
-            ? css`
-                opacity: 0.05;
-            `
-            :css`
-                opacity: 1;
-            `
-        }
-    }
-
-    h3 {
-        grid-area: a;
-        justify-self: center;
-        align-self: center;
-        font-weight: 600;
-    }
-
-    .icon {
-        height: 2rem;
-        margin-left: 1rem;
-        width: 2rem;
-    }
-
-    @media screen and (max-width: 576px) {
-        img {
-            max-width: 20rem;
-        }
-    }
+const Line = styled.div`
+    height: 1px;
+    background-color: ${({ theme }) => theme.gamma };
+    max-width: 24rem;
+    width: 24rem;
+    display: inline-block;
+    margin-left: 2rem;
+    margin-bottom: 7px;
 `
 
 export default SectionTitle

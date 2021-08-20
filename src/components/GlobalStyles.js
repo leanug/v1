@@ -3,7 +3,8 @@ import { createGlobalStyle } from 'styled-components'
 const Globals = createGlobalStyle`
     :root {
         --primary-font: "Rubik", Roboto, Helvetica, Arial, sans-serif;
-        --secondary-font: 'VT323', monospace;
+        --secondary-font: "Poppins", Roboto, Helvetica, Arial, sans-serif;
+        --dos-font: 'VT323', monospace;
         --radius-alpha: 0.5rem;
         --radius-beta: 1rem;
         --radius-gamma: 50%;
@@ -44,6 +45,10 @@ const Globals = createGlobalStyle`
     .wrapper-fluid {
         padding-left: calc(2rem + 4vw);
         padding-right: calc(2rem + 4vw);
+
+        @media screen and ( max-width: 576px ) {
+            padding: 0 2rem;
+        }
     }
 
     .display-grid {
@@ -120,6 +125,15 @@ const Globals = createGlobalStyle`
         }
     }
 
+    .underline {
+        text-decoration: underline;
+        
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
     .display-one {
         font-size: calc( 2.5rem + 5vw );
     }
@@ -193,9 +207,9 @@ const Globals = createGlobalStyle`
         width: 100%;
     }
 
-    .w-400 {
-        @media screen and ( min-width: 768px ) {
-            max-width: 40rem;
+    .w-920 {
+        @media screen and ( min-width: 920px ) {
+            max-width: 92rem;
         }
     }
 

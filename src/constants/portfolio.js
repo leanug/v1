@@ -8,6 +8,14 @@ const data = [
         git: 'https://github.com/leanug/movienation'
     },
     {
+        title: 'GitHubSter',
+        categories: 'react, Context API, styled components, GitHub API, FusionCharts',
+        image: '',
+        text: 'Data visualization of github users.',
+        live: 'https://githubster.netlify.app/',
+        git: 'https://github.com/leanug/githubprofile'
+    },
+    {
         title: 'Gatsby website',
         categories: 'gatsby, styled components',
         image: '',

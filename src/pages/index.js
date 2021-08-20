@@ -1,10 +1,8 @@
 import React from 'react'
 import Layout from "../components/Layout"
 import Seo from '../components/SEO'
-import Logos from '../components/Logos'
 import Portfolio from '../components/Portfolio'
 import SectionTitle from '../components/SectionTitle'
-import sections from '../constants/sections'
 
 const IndexPage = () => {
     return (
@@ -18,11 +16,11 @@ const IndexPage = () => {
                     </h1>
                 </section>
                 <section className="section-mb">
-                    <SectionTitle data={ sections[ 2 ] } />
+                    <SectionTitle title="Portfolio" number="01." />
                     <Portfolio />
                 </section>
                 <section className="section-mb">
-                    <SectionTitle data={ sections[ 0 ] } />
+                    <SectionTitle title="About me" number="02." />
                     <p className="display-two">
                         I took my first steps in web development with html and css, making free themes for Myspace.
                     </p>
@@ -37,11 +35,13 @@ const IndexPage = () => {
                     </p>
                 </section>
                 <section className="section-mb">
-                    <SectionTitle data={ sections[ 1 ] } />
-                    <Logos />
+                    <SectionTitle title="My stack" number="03." />
+                    <p className="display-two">
+                        React / Gatsby / Figma / ES6 / WordPress / HTML5
+                    </p>
                 </section>
                 <section>
-                    <SectionTitle data={ sections[ 3 ] } />
+                    <SectionTitle title="Contact" number="04." />
                     <a href="mailto:leandroubilla@protonmail.com" className="display-two">
                         Say Hi to Leandro
                     </a>

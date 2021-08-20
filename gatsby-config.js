@@ -12,10 +12,10 @@ module.exports = {
       resolve: "gatsby-plugin-manifest",
       options: {
         name: `Leandro Ubilla Gonzalez - Portfolio`,
-        short_name: `Portfolio`,
+        short_name: `LUG Portfolio`,
         start_url: `/`,
         background_color: `#FFFFFF`,
-        theme_color: `#0074E7`,
+        theme_color: `#333333`,
         display: `standalone`,
         icon: `src/images/icon.svg`,
         cache_busting_mode: 'none'
@@ -55,6 +55,10 @@ module.exports = {
             {
               family: "Rubik",
               axes: "wght@300;400;500;600;700",
+            },
+            {
+              family: "Poppins",
+              axes: "wght@400;500;600;700",
             },
             {
               family: "VT323",

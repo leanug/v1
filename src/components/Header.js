@@ -2,7 +2,7 @@ import React from 'react'
 import { BsMoon } from 'react-icons/bs'
 import styled from 'styled-components'
 
-const Navbar = ({ toggleTheme, toggleDos }) => {
+const Navbar = ({ toggleTheme }) => {
   return (
     <Header className="wrapper-fluid">
       <div>
@@ -29,7 +29,7 @@ const Header = styled.header`
   justify-content: space-between;
   
   .logo {
-    font-family: var(--secondary-font);
+    font-family: var(--dos-font);
     font-size: 2rem;
   }
 

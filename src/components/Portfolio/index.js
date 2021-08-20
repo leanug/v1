@@ -5,23 +5,43 @@ import projects from '../../constants/portfolio'
 import { useStaticQuery, graphql } from "gatsby"
 
 const Portfolio = () => {
-  const images = useStaticQuery(graphql`
-    query HeaderQuery {
-        placeholderImage1: file(relativePath: {eq: "projects/movienation.jpg"}) {
-            childImageSharp {
-                gatsbyImageData 
+    const images = useStaticQuery(graphql`
+        query HeaderQuery {
+            placeholderImage1: file(relativePath: {eq: "projects/movienation.jpg"}) {
+                childImageSharp {
+                    gatsbyImageData (
+                        quality: 100
+                        height: 350
+                        width: 580
+                        transformOptions: {fit: COVER}
+                    )
+                }
+            }
+            placeholderImage2: file(relativePath: {eq: "projects/githubster.jpg"}) {
+                childImageSharp {
+                    gatsbyImageData (
+                        quality: 100
+                        height: 350
+                        width: 580
+                        transformOptions: {fit: COVER}
+                    )
+                }
+            }
+            placeholderImage3: file(relativePath: {eq: "projects/distrial.jpg"}) {
+                childImageSharp {
+                    gatsbyImageData (
+                        quality: 100
+                        height: 350
+                        width: 580
+                        transformOptions: {fit: COVER}
+                    )
+                }
             }
         }
-        placeholderImage2: file(relativePath: {eq: "projects/distrial.jpg"}) {
-          childImageSharp {
-              gatsbyImageData 
-          }
-        }
-    }
-  `)
+    `)
 
     const imagesAry = Object.values( images )
-    projects.forEach((project, index) => {
+    projects.forEach(( project, index ) => {
       const { childImageSharp: { gatsbyImageData: image } = {} } = imagesAry[ index ]
       project.image = image
     })
@@ -38,12 +58,8 @@ const Portfolio = () => {
 const Wrapper = styled.div`
     display: grid;
     grid-gap: 8rem;
-    grid-template-columns: repeat( auto-fit, minmax( 30rem, 1fr ));
+    grid-template-columns: repeat( auto-fit, minmax( 28rem, 1fr ));
     margin-top: 6rem;
-
-    @media screen and ( min-width: 576px ) {
-        grid-template-columns: repeat( 2, 1fr );
-    }
 `
 
 export default Portfolio
