@@ -1,26 +1,13 @@
 module.exports = {
   siteMetadata: {
     title: `Leandro Ubilla Gonzalez`,
-    description: `Leandro is a front end web developer who specializes in building accessible and performant react websites.`,
+    description: `Leandro is a front end web developer who specializes in building accessible and performant websites.`,
     author: `Leandro Ubilla Gonzalez`,
   },
   plugins: [
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
-    {
-      resolve: "gatsby-plugin-manifest",
-      options: {
-        name: `Leandro Ubilla Gonzalez - Portfolio`,
-        short_name: `LUG Portfolio`,
-        start_url: `/`,
-        background_color: `#FFFFFF`,
-        theme_color: `#333333`,
-        display: `standalone`,
-        icon: `src/images/icon.svg`,
-        cache_busting_mode: 'none'
-      },
-    },
     {
       resolve: 'gatsby-plugin-offline',
       options: {

@@ -16,7 +16,7 @@ const IndexPage = () => {
                     </h1>
                 </section>
                 <section className="section-mb">
-                    <SectionTitle title="Portfolio" number="01." />
+                    <SectionTitle title="Projects" number="01." />
                     <Portfolio />
                 </section>
                 <section className="section-mb">
