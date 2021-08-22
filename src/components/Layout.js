@@ -25,9 +25,9 @@
 
    const toggleTheme = _ => {
      if ( theme === 'light' ) {
-       setTheme( 'dark') 
-       url && window.localStorage.setItem( 'theme', 'dark' )
-       return
+        setTheme( 'dark') 
+        url && window.localStorage.setItem( 'theme', 'dark' )
+        return
      } 
  
      setTheme( 'light' ) 
@@ -35,8 +35,8 @@
    }
  
    useEffect( () => {
-     const localTheme = window.localStorage.getItem( 'theme' )
-     localTheme && setTheme( localTheme );
+      const localTheme = window.localStorage.getItem( 'theme' )
+      localTheme && setTheme( localTheme );
    }, []);
    
    return (
