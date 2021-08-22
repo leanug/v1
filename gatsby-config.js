@@ -41,11 +41,11 @@ module.exports = {
           google2: [
             {
               family: "Rubik",
-              axes: "wght@300;400;500;600;700",
+              axes: "wght@400",
             },
             {
               family: "Poppins",
-              axes: "wght@400;500;600;700",
+              axes: "wght@400",
             },
             {
               family: "VT323",

@@ -1,21 +1,24 @@
 import React from 'react'
 import { BsMoon } from 'react-icons/bs'
+import Fade from 'react-reveal/Fade';
 import styled from 'styled-components'
 
 const Navbar = ({ toggleTheme }) => {
   return (
     <Header className="wrapper-fluid">
-      <div>
-        <span className="logo">L:&#10095; UG</span>
-        <div className="cursor"></div>
-      </div>
-      <button
-          aria-label="Dark or light website theme toggler"
-          onClick={ toggleTheme }
-          className="theme-toggler"
-        >
-          <BsMoon className="icon" />
-      </button>
+      <Fade top distance="100px">
+        <div>
+          <span className="logo">L:&#10095; UG</span>
+          <div className="cursor"></div>
+        </div>
+        <button
+            aria-label="Dark or light website theme toggler"
+            onClick={ toggleTheme }
+            className="theme-toggler"
+          >
+            <BsMoon className="icon" />
+        </button>
+      </Fade>
     </Header>
   )
 }
