@@ -12,34 +12,38 @@ const IndexPage = () => {
                 <section className="section-mb">
                     <h1 className="display-two" >
                         Hello, I'm Leandro, a Web Developer from Uruguay. 
-                        My main focus is developing accessible and performant websites.
+                        My main focus is to develop (and occasionally design) accessible and performant websites.
                     </h1>
                 </section>
+            
                 <section className="section-mb">
                     <SectionTitle title="Projects" number="01." />
                     <Portfolio />
                 </section>
+            
                 <section className="section-mb">
                     <SectionTitle title="About me" number="02." />
                     <p className="display-two">
-                        I took my first steps in web development with html and css, making free themes for Myspace.
+                        I took my first steps in web development back in 2008 when I started making themes for Myspace with CSS and HTML.
                     </p>
                     <p className="display-two">
-                        From 2010 to 2016 I ran a network of niche websites made with php.
+                        From 2010 to 2016, I ran a network of niche websites made with PHP.
                     </p>
                     <p className="display-two">
-                        After that I worked as a freelancer building and fixing WordPress websites and themes.
+                        After that, I worked as a freelancer building and fixing WordPress websites and themes.
                     </p>
                     <p className="display-two">
-                        Eventually I migrated to javascript and I've been working with React.js ever since.
+                        Eventually, I migrated to React.js, and I've been building React websites ever since.
                     </p>
                 </section>
+            
                 <section className="section-mb">
                     <SectionTitle title="My stack" number="03." />
                     <p className="display-two">
                         React / Gatsby / Figma / ES6 / WordPress / HTML5
                     </p>
                 </section>
+            
                 <section>
                     <SectionTitle title="Contact" number="04." />
                     <a href="mailto:leandroubilla@protonmail.com" className="display-two">

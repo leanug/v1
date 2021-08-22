@@ -7,7 +7,6 @@ const Navbar = ({ toggleTheme }) => {
         <Header className="wrapper-fluid">
             <div>
                 <span className="logo">L:&#10095; UG</span>
-                <div className="cursor"></div>
             </div>
             <button
                 aria-label="Dark or light website theme toggler"

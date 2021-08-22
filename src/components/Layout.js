@@ -12,6 +12,7 @@
  import Header from './Header'
  import { lightTheme, darkTheme } from '../theme';
  import 'normalize.css'
+ import Loading from './Loading'
  import PropTypes from "prop-types"
  import styled, { ThemeProvider } from 'styled-components'
  
@@ -22,6 +23,7 @@
      : '';
    /* Dark and Light themes */
    const [ theme, setTheme ] = useState( 'light' )
+   const [ showLoading, setShowLoading ] = useState( true )
 
    const toggleTheme = _ => {
      if ( theme === 'light' ) {
@@ -37,6 +39,10 @@
    useEffect( () => {
       const localTheme = window.localStorage.getItem( 'theme' )
       localTheme && setTheme( localTheme );
+
+      setTimeout(() => {
+        setShowLoading( false )
+      }, 300);
    }, []);
    
    return (
@@ -45,6 +51,7 @@
      >
        <GlobalStyles />
        <BackToTopBtn />
+       { showLoading && <Loading /> }
        <PageWrapper>
          <Header
            theme={ theme }

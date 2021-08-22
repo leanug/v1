@@ -42,22 +42,25 @@ module.exports = {
             {
               family: "Rubik",
               axes: "wght@400",
+              fontDisplay: 'swap',
+              strategy: 'selfHosted'
             },
             {
               family: "Poppins",
               axes: "wght@400",
+              fontDisplay: 'swap',
+              strategy: 'selfHosted'
             },
             {
               family: "VT323",
+              fontDisplay: 'swap',
+              strategy: 'selfHosted'
             },
           ],
         },
-      },
-    },
-    {
-      resolve: `gatsby-plugin-canonical-urls`,
-      options: {
-        siteUrl: `https://www.leandroubilla.com`,
+        useMinify: true,
+        usePreload: true,
+        usePreconnect: false,
       },
     },
   ],
