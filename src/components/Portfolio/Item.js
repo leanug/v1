@@ -11,7 +11,11 @@ const Item = ({ categories, title, image, text, live, git }) => {
         <Wrapper>
             { image && 
                 <a className="link-img" href={ live }>
-                    <GatsbyImage imgClassName="img" image={ img } alt={ title } />
+                    <GatsbyImage 
+                        imgClassName="img" 
+                        image={ img } alt={ title }
+                        loading="lazy"
+                    />
                 </a>
             }
             <div className="container">

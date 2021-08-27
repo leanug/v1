@@ -1,13 +1,17 @@
 module.exports = {
   siteMetadata: {
-    title: `Leandro Ubilla Gonzalez`,
-    description: `Leandro is a front end web developer who specializes in building accessible and performant websites.`,
     author: `Leandro Ubilla Gonzalez`,
+    description: `Leandro is a front end web developer who specializes in building accessible and performant websites.`,
+    siteUrl: "https://www.leandroubilla.com",
+    title: `Leandro Ubilla Gonzalez`,
   },
   plugins: [
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
+    `gatsby-plugin-smoothscroll`,
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
       resolve: 'gatsby-plugin-offline',
       options: {
@@ -16,8 +20,6 @@ module.exports = {
          }
       }
     },
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -27,41 +29,12 @@ module.exports = {
       __key: "images",
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-plugin-web-font-loader',
       options: {
-        name: "pages",
-        path: "./src/pages/",
-      },
-      __key: "pages",
-    },
-    {
-      resolve: `gatsby-plugin-webfonts`,
-      options: {
-        fonts: {
-          google2: [
-            {
-              family: "Rubik",
-              axes: "wght@400",
-              fontDisplay: 'swap',
-              strategy: 'selfHosted'
-            },
-            {
-              family: "Poppins",
-              axes: "wght@400",
-              fontDisplay: 'swap',
-              strategy: 'selfHosted'
-            },
-            {
-              family: "VT323",
-              fontDisplay: 'swap',
-              strategy: 'selfHosted'
-            },
-          ],
-        },
-        useMinify: true,
-        usePreload: true,
-        usePreconnect: false,
-      },
-    },
+        google: {
+          families: ['Rubik', 'Poppins', 'VT323']
+        }
+      }
+    }
   ],
 };

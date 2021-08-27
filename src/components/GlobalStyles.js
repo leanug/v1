@@ -127,7 +127,6 @@ const Globals = createGlobalStyle`
 
     .underline {
         text-decoration: underline;
-        
 
         &:hover {
             text-decoration: none;
@@ -149,6 +148,12 @@ const Globals = createGlobalStyle`
     .display-four {
         font-size: calc( 2.5rem + 2.2vw );
     }
+
+    @media screen and ( max-width: 576px ) {
+        .display-two {
+            font-size: 2rem;
+        }
+    }   
 
     .display-flex {
         display: flex;
@@ -193,6 +198,7 @@ const Globals = createGlobalStyle`
     a {
         color: ${({ theme }) => theme.psi };
         text-decoration: none;
+        transition: color 0.25s linear;
     }
 
     a:hover {
@@ -201,6 +207,10 @@ const Globals = createGlobalStyle`
 
     :focus {
         outline: none !important;
+    }
+
+    .t-delta {
+        color: ${({ theme }) => theme.delta };
     }
 
     .w-100 {
@@ -307,8 +317,16 @@ const Globals = createGlobalStyle`
         margin-left: 1rem;
     }
 
+    .ml-20 {
+        margin-left: 2rem;
+    }
+
     .mr-10 {
         margin-right: 1rem;
+    }
+
+    .mr-20 {
+        margin-right: 2rem;
     }
 
     .mx-auto {

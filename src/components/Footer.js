@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <Wrapper className="mb-20">
             <span>
-                <a href="https://github.com/leanug/v1"><SiGithub className="icon" />Open on Github</a>
+                <a href="https://github.com/leanug/v1"><SiGithub className="icon" />Source</a>
             </span>
             <span>
                 <a href="https://www.gatsbyjs.com"><SiGatsby className="icon" />Built with Gatsby</a>

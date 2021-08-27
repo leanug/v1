@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const SectionTitle = ({ title, number}) => {
+const SectionTitle = ({ title, number }) => {
     return (
         <Wrapper>
             <span>{ number }</span>
@@ -17,6 +17,7 @@ const Wrapper = styled.div`
     margin-bottom: 3rem;
 
     span:first-child {
+        color: ${({ theme }) => theme.delta };
         margin-right: 1rem;
         font-size: 1.4rem;
     }

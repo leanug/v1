@@ -23,7 +23,7 @@
      : '';
    /* Dark and Light themes */
    const [ theme, setTheme ] = useState( 'light' )
-   const [ showLoading, setShowLoading ] = useState( true )
+   const [ showLoading, setShowLoading ] = useState( false )
 
    const toggleTheme = _ => {
      if ( theme === 'light' ) {
