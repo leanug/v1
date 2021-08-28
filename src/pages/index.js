@@ -9,7 +9,7 @@ const IndexPage = () => {
     return (
         <Layout>
             <Seo />
-            <article className="wrapper-fluid mt-100 mb-160">
+            <article className="wrapper-fluid mt-100 section-mb">
                 <section className="section-mb">
                     <Line />
                     <span className="mr-10 t-delta">Hello</span>👋
@@ -53,14 +53,14 @@ const IndexPage = () => {
             
                 <section id="contact">
                     <SectionTitle title="Contact" number="04." />
-                    <a href="mailto:leandroubilla@protonmail.com" className="display-two t-delta">
+                    <a href="mailto:leandroubilla@protonmail.com" className="display-two">
                         Say Hi to Leandro
                     </a>
                     <br />
                     <a 
                         href="https://github.com/leanug" 
                         target="_blank" 
-                        className="display-two t-delta"
+                        className="display-two"
                         rel="noreferrer"
                     >
                         GitHub
@@ -70,7 +70,7 @@ const IndexPage = () => {
                         href="https://www.linkedin.com/in/leandro-ubilla-gonzalez" 
                         target="_blank"
                         rel="noreferrer"
-                        className="display-two t-delta"
+                        className="display-two"
                     >
                         LinkedIn
                     </a>
@@ -86,7 +86,7 @@ const Line = styled.div`
     max-width: 24rem;
     width: 8rem;
     display: inline-block;
-    margin-bottom: 7px;
+    margin-bottom: 6px;
     margin-right: 1rem;
 `
 

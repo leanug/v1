@@ -1,9 +1,15 @@
 import React from 'react'
 import { BsMoon } from 'react-icons/bs'
+import { FaBars } from 'react-icons/fa'
+import links from '../constants/links'
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import styled from 'styled-components'
 
-const Navbar = ({ toggleTheme }) => {
+const Navbar = ({ toggleTheme, toggleSidebar }) => {
+    const showNavbar = typeof window !== 'undefined' 
+    ? window.location.pathname === '/' ? true : false 
+    : true;
+    
     return (
         <Header className="wrapper-fluid">
             <div>
@@ -11,43 +17,32 @@ const Navbar = ({ toggleTheme }) => {
                 <span className="cursor"></span>
             </div>
             <div>
+                { showNavbar && links.map(( item, index ) => {
+                    return (
+                        <button
+                            key={ index }
+                            onClick={() => scrollTo( `${ item.url }` )}
+                            onKeyPress={() => scrollTo( `${ item.url }` )}
+                            aria-label={ `scroll to ${ item.title } section` }
+                            className="nav-btn"
+                        >
+                            { item.title }
+                        </button>
+                    )
+                })}
                 <button 
-                    onClick={() => scrollTo('#projects')}
-                    onKeyPress={() => scrollTo('#projects')}
-                    aria-label="scroll to projects section"
-                    className="nav-btn"
-                >
-                    Projects
-                </button>
-                <button 
-                    onClick={() => scrollTo('#about')}
-                    onKeyPress={() => scrollTo('#about')}
-                    aria-label="scroll to about section"
-                    className="nav-btn"
-                >
-                    About
-                </button>
-                <button 
-                    onClick={() => scrollTo('#stack')}
-                    onKeyPress={() => scrollTo('#stack')}
-                    aria-label="scroll to about section"
-                    className="nav-btn"
-                >
-                    My stack
-                </button>
-                <button 
-                    onClick={() => scrollTo('#contact')}
-                    onKeyPress={() => scrollTo('#contact')}
+                    onClick={ toggleSidebar }
+                    onKeyPress={ toggleSidebar }
                     aria-label="scroll to contact section"
-                    className="nav-btn"
+                    className="aside-btn"
                 >
-                    Contact
+                    <FaBars className="icon" />
                 </button>
                 <ThemeTogglerBtn
                     aria-label="Dark or light website theme toggler"
                     onClick={ toggleTheme }
                 >
-                    <BsMoon className="icon" />
+                    <BsMoon className="icon moon" />
                 </ThemeTogglerBtn>
             </div>
         </Header>
@@ -90,6 +85,10 @@ const Header = styled.header`
         cursor: pointer;
         transition: color 0.25s linear;
         font-family: var(--secondary-font);
+
+        @media screen and ( max-width: 576px ) {
+            display: none;
+        }
     }
 
     .nav-btn:before {
@@ -119,25 +118,45 @@ const Header = styled.header`
         align-items: center;
         height: 100%;
     }
+
+    .aside-btn {
+        cursor: pointer;
+        background-color: transparent;
+        border: 1px solid ${({ theme }) => theme.gamma };
+        border-radius: var(--radius-alpha);
+        font-size: 2rem;
+        width: 48px;
+        height: 48px;
+
+        .icon {
+            color: ${({ theme }) => theme.psi };
+            margin-top: 6px;
+        }
+
+        @media screen and ( min-width: 576px ) {
+            display: none;
+        }
+    }
 `
 
 const ThemeTogglerBtn = styled.button`
     align-items: center;
-    justify-content: flex-end;
     background: transparent;
-    border-color: transparent;
+    border: 1px solid ${({ theme }) => theme.gamma };
+    border-radius: var(--radius-alpha);
     cursor: pointer;
-    line-height: 1;
-    width: 48px;
-    height: 48px;
     display: flex;
+    justify-content: center;
+    height: 48px;
+    line-height: 1;
+    margin-left: 1rem;
+    width: 48px;
 
     .icon {
         color: ${({ theme }) => theme.psi };
         height: auto;
         transition: all 0.25s linear;
         width: 2rem;
-        margin-bottom: 6px;
     }
 `
 

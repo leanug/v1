@@ -8,7 +8,8 @@ const Globals = createGlobalStyle`
         --radius-alpha: 0.5rem;
         --radius-beta: 1rem;
         --radius-gamma: 50%;
-        --line-heigh-alpha: 1.5;
+        --line-height-alpha: 1.5;
+        --line-height-beta: 2;
         --max-width: 132rem;
     }
 
@@ -30,7 +31,7 @@ const Globals = createGlobalStyle`
         color: ${({ theme }) => theme.psi };
         font-family: var(--primary-font);
         font-size: 1.8rem;
-        line-height: var(--line-heigh-alpha);
+        line-height: var(--line-height-alpha);
         transition: color 0.25s linear;
     }
 
@@ -73,6 +74,10 @@ const Globals = createGlobalStyle`
         line-height: 1.4;
         margin: 0;
         font-weight: 400;
+
+        @media screen and ( max-width: 576px ) {
+            line-height: var(--line-height-beta);
+        }
     }
 
     h1, .header-1 {
