@@ -16,7 +16,7 @@ const BackToTopBtn = () => {
 
         if ( typeof window !== 'undefined' ) {
             window.addEventListener("scroll", onScroll);
-            return () => window.removeEventListener("scroll", onScroll);
+            return () => window.removeEventListener( "scroll", onScroll );
         }
     }, [ showButton ])
 
@@ -61,7 +61,7 @@ const Button = styled.button`
     right: 2rem;
     transition: all 0.25s linear;
     width: 48px;
-    z-index: 30;
+    z-index: 50;
 
     &:hover {
         box-shadow: ${({ theme }) => theme.darkShadow };

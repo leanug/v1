@@ -17,20 +17,24 @@ const Wrapper = styled.div`
     margin-bottom: 3rem;
 
     span:first-child {
-        color: ${({ theme }) => theme.beta };
-        margin-right: 1rem;
+        color: ${({ theme }) => theme.delta };
         font-size: 1.4rem;
+        margin-right: 1rem;
     }
 `
 
 const Line = styled.div`
-    height: 1px;
     background-color: ${({ theme }) => theme.gamma };
-    max-width: 24rem;
-    width: 24rem;
     display: inline-block;
-    margin-left: 2rem;
-    margin-bottom: 7px;
+    height: 1px;
+    max-width: 14rem;
+    margin-left: 1.2rem;
+    margin-bottom: 6px;
+    width: 100%;
+
+    @media screen and ( min-width: 576px ) {
+        max-width: 24rem;
+    }
 `
 
 export default SectionTitle

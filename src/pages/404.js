@@ -1,54 +1,37 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import React from 'react'
+import { Link } from 'gatsby'
+import Layout from "../components/Layout"
+import Seo from '../components/SEO'
+import styled from 'styled-components'
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-
-// markup
 const NotFoundPage = () => {
-  return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  )
+    return (
+        <Layout>
+            <Seo 
+                title="404 - Page not found"
+            />
+            <Wrapper>
+                <div className="text-center">
+                    <h1 className="display-one">404</h1>
+                    <h2 className="display-four mb-30">Page not found</h2>
+                    <Link className="button" to="/">Home</Link>
+                </div>
+            </Wrapper>
+        </Layout>
+    )
 }
+
+const Wrapper = styled.div`
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+
+    .button {
+        border: 1px solid ${({ theme }) => theme.gamma };
+        border-radius: var(--radius-alpha);
+        padding: 1rem 2rem;
+    }
+`
 
 export default NotFoundPage

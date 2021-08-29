@@ -21,11 +21,14 @@ module.exports = {
       __key: "images",
     },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-        google: {
-          families: ['Rubik', 'Poppins', 'VT323']
-        }
+        fonts: [
+          `rubik`,
+          `poppins`,
+          `VT323`,
+        ],
+        display: 'swap'
       }
     }
   ],
