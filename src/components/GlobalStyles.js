@@ -8,8 +8,7 @@ const Globals = createGlobalStyle`
         --radius-alpha: 0.5rem;
         --radius-beta: 1rem;
         --radius-gamma: 50%;
-        --line-height-alpha: 1.5;
-        --line-height-beta: 2;
+        --line-heigh-alpha: 1.5;
         --max-width: 132rem;
     }
 
@@ -31,7 +30,7 @@ const Globals = createGlobalStyle`
         color: ${({ theme }) => theme.psi };
         font-family: var(--primary-font);
         font-size: 1.8rem;
-        line-height: var(--line-height-alpha);
+        line-height: var(--line-heigh-alpha);
         transition: color 0.25s linear;
     }
 
@@ -74,10 +73,6 @@ const Globals = createGlobalStyle`
         line-height: 1.4;
         margin: 0;
         font-weight: 400;
-
-        @media screen and ( max-width: 576px ) {
-            line-height: var(--line-height-beta);
-        }
     }
 
     h1, .header-1 {
@@ -132,6 +127,7 @@ const Globals = createGlobalStyle`
 
     .underline {
         text-decoration: underline;
+        
 
         &:hover {
             text-decoration: none;
@@ -322,16 +318,8 @@ const Globals = createGlobalStyle`
         margin-left: 1rem;
     }
 
-    .ml-20 {
-        margin-left: 2rem;
-    }
-
     .mr-10 {
         margin-right: 1rem;
-    }
-
-    .mr-20 {
-        margin-right: 2rem;
     }
 
     .mx-auto {
