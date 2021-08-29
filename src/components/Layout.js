@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import BackToTopBtn from './BackToTopBtn'
 import GlobalStyles from './GlobalStyles'
 import Footer from './Footer'
@@ -27,7 +27,6 @@ const Layout = ({ children }) => {
   const [ theme, setTheme ] = useState( 'light' )
   const [ showLoading, setShowLoading ] = useState( true )
   const [ showSidebar, setShowSidebar ] = useState( false )
-  const pageWrapper = useRef(0);
   
   const toggleSidebar = _ => {
     setShowSidebar( ! showSidebar )
@@ -47,19 +46,6 @@ const Layout = ({ children }) => {
   const scrollToSection = url => {
     scrollTo( `${ url }` )
   }
-
-  /* Disables page vertical scrolling when the sidebar is open */
-  useEffect(() => {
-    if ( showSidebar ) {
-      pageWrapper.current.style.overflowY = "hidden"
-      pageWrapper.current.style.height = "100vh"
-    }
-
-    if ( ! showSidebar ) {
-      pageWrapper.current.style.overflowY = "scroll"
-      pageWrapper.current.style.minHeight = "100vh"
-    }
-  }, [ showSidebar ])
 
   useEffect( () => {
     const localTheme = window.localStorage.getItem( 'theme' )
@@ -85,7 +71,7 @@ const Layout = ({ children }) => {
       /> 
       <BackToTopBtn />
       { showLoading && <Loading /> }
-      <PageWrapper showSidebar={ showSidebar } ref={ pageWrapper }>
+      <PageWrapper showSidebar={ showSidebar }>
         <Header
           theme={ theme }
           toggleTheme={ toggleTheme }
