@@ -19,7 +19,11 @@ const Sidebar = ({ showSidebar, toggleSidebar }) => {
         aria-label="Main sidebar containing navigation links"
     >
       <div className="btn-container">
-          <button onClick={ toggleSidebar } className="close-btn">
+          <button 
+            onClick={ toggleSidebar } 
+            className="close-btn"
+            aria-label="Close sidebar"
+          >
             <IoMdClose />
           </button>
       </div>
