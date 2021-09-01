@@ -19,7 +19,7 @@ const data = [
         title: 'Distrial',
         categories: 'gatsby, styled components',
         image: '',
-        text: 'An interior design gatsby website. (Not my design)',
+        text: 'An interior design website. (Not my design)',
         live: 'https://distrial.netlify.app',
         git: 'https://github.com/leanug/distrial'
     },
@@ -27,7 +27,7 @@ const data = [
         title: 'Colonia Development',
         categories: 'gatsby, styled components',
         image: '',
-        text: 'A real state listing website made with Gatsby. (Not my design)',
+        text: 'A real estate listing website. (Not my design)',
         live: 'https://www.coloniadevelopment.site',
         git: 'https://github.com/leanug/coloniadevelopment'
     },
