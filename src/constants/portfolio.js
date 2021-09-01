@@ -15,6 +15,22 @@ const data = [
         live: 'https://githubster.netlify.app/',
         git: 'https://github.com/leanug/githubprofile'
     },
+    {
+        title: 'Distrial',
+        categories: 'gatsby, styled components',
+        image: '',
+        text: 'An interior design gatsby website. (Not my design)',
+        live: 'https://distrial.netlify.app',
+        git: 'https://github.com/leanug/distrial'
+    },
+    {
+        title: 'Colonia Development',
+        categories: 'gatsby, styled components',
+        image: '',
+        text: 'A real state listing website made with Gatsby. (Not my design)',
+        live: 'https://www.coloniadevelopment.site',
+        git: 'https://github.com/leanug/coloniadevelopment'
+    },
 ]
 
 export default data

@@ -37,6 +37,16 @@ const Portfolio = () => {
                     )
                 }
             }
+            placeholderImage4: file(relativePath: {eq: "projects/colonia.jpg"}) {
+                childImageSharp {
+                    gatsbyImageData (
+                        quality: 75
+                        height: 350
+                        width: 580
+                        placeholder: BLURRED
+                    )
+                }
+            }
         }
     `)
 
@@ -60,6 +70,10 @@ const Wrapper = styled.div`
     grid-gap: 8rem;
     grid-template-columns: repeat( auto-fit, minmax( 28rem, 1fr ));
     margin-top: 6rem;
+
+    @media screen and ( min-width: 992px ) {
+        grid-template-columns: repeat( 3, 1fr);
+    }
 `
 
 export default Portfolio
