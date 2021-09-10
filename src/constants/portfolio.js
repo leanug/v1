@@ -16,20 +16,20 @@ const data = [
         git: 'https://github.com/leanug/githubprofile'
     },
     {
+        title: 'React UI Components',
+        categories: 'gatsby, styled components',
+        image: '',
+        text: 'A small collection of UI Components',
+        live: 'https://ruc-react-ui-components.netlify.app',
+        git: 'https://github.com/leanug/react-ui-components'
+    },
+    {
         title: 'Distrial',
         categories: 'gatsby, styled components',
         image: '',
         text: 'An interior design website. (Not my design)',
         live: 'https://distrial.netlify.app',
         git: 'https://github.com/leanug/distrial'
-    },
-    {
-        title: 'Colonia Development',
-        categories: 'gatsby, styled components',
-        image: '',
-        text: 'A real estate listing website. (Not my design)',
-        live: 'https://www.coloniadevelopment.site',
-        git: 'https://github.com/leanug/coloniadevelopment'
     },
 ]
 

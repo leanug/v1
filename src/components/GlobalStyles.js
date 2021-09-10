@@ -10,7 +10,7 @@ const Globals = createGlobalStyle`
         --radius-gamma: 50%;
         --line-height-alpha: 1.5;
         --line-height-beta: 2;
-        --max-width: 132rem;
+        --max-width: 160rem;
     }
 
     *,
