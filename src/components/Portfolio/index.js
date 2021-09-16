@@ -37,7 +37,7 @@ const Portfolio = () => {
                     )
                 }
             }
-            placeholderImage4: file(relativePath: {eq: "projects/distrial.jpg"}) {
+            placeholderImage4: file(relativePath: {eq: "projects/random-user.jpg"}) {
                 childImageSharp {
                     gatsbyImageData (
                         quality: 75

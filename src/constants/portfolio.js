@@ -24,12 +24,12 @@ const data = [
         git: 'https://github.com/leanug/react-ui-components'
     },
     {
-        title: 'Distrial',
-        categories: 'gatsby, styled components',
+        title: 'Random user generator',
+        categories: 'react, styled components, random user API',
         image: '',
-        text: 'An interior design website. (Not my design)',
-        live: 'https://distrial.netlify.app',
-        git: 'https://github.com/leanug/distrial'
+        text: 'A random user generator App',
+        live: 'https://rug-random-user-generator.netlify.app',
+        git: 'https://github.com/leanug/random-user-generator'
     },
 ]
 

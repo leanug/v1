@@ -12,7 +12,6 @@ import Footer from './Footer'
 import Header from './Header'
 import { lightTheme, darkTheme } from '../theme';
 import 'normalize.css'
-import Loading from './Loading'
 import Sidebar from './Sidebar'
 import PropTypes from "prop-types"
 import scrollTo from 'gatsby-plugin-smoothscroll';
@@ -25,7 +24,6 @@ const Layout = ({ children }) => {
     : '';
   /* Dark and Light themes */
   const [ theme, setTheme ] = useState( 'light' )
-  const [ showLoading, setShowLoading ] = useState( true )
   const [ showSidebar, setShowSidebar ] = useState( false )
   
   const toggleSidebar = _ => {
@@ -50,12 +48,6 @@ const Layout = ({ children }) => {
   useEffect( () => {
     const localTheme = window.localStorage.getItem( 'theme' )
     localTheme && setTheme( localTheme );
-
-    const timeOut = setTimeout(() => {
-      setShowLoading( false )
-    }, 300);
-
-    return () => clearTimeout( timeOut )
   }, []);
   
   return (
@@ -70,7 +62,6 @@ const Layout = ({ children }) => {
         scrollToSection={ scrollToSection }
       /> 
       <BackToTopBtn />
-      { showLoading && <Loading /> }
       <PageWrapper showSidebar={ showSidebar }>
         <Header
           theme={ theme }
