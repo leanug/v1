@@ -27,7 +27,7 @@ const Portfolio = () => {
                     )
                 }
             }
-            placeholderImage3: file(relativePath: {eq: "projects/react-ui-components.jpg"}) {
+            placeholderImage3: file(relativePath: {eq: "projects/aerion.jpg"}) {
                 childImageSharp {
                     gatsbyImageData (
                         quality: 75
@@ -37,7 +37,17 @@ const Portfolio = () => {
                     )
                 }
             }
-            placeholderImage4: file(relativePath: {eq: "projects/random-user.jpg"}) {
+            placeholderImage4: file(relativePath: {eq: "projects/react-ui-components.jpg"}) {
+                childImageSharp {
+                    gatsbyImageData (
+                        quality: 75
+                        height: 350
+                        width: 580
+                        placeholder: BLURRED
+                    )
+                }
+            }
+            placeholderImage5: file(relativePath: {eq: "projects/random-user.jpg"}) {
                 childImageSharp {
                     gatsbyImageData (
                         quality: 75

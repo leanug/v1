@@ -16,12 +16,12 @@ const data = [
         git: 'https://github.com/leanug/githubprofile'
     },
     {
-        title: 'React UI Components',
-        categories: 'gatsby, styled components',
+        title: 'Aerion.Studio',
+        categories: 'gatsby, styled components, netlify',
         image: '',
-        text: 'A small collection of UI Components',
-        live: 'https://ruc-react-ui-components.netlify.app',
-        git: 'https://github.com/leanug/react-ui-components'
+        text: 'A landing page made with Gatsby',
+        live: 'https://www.aerion.studio',
+        git: 'https://github.com/leanug/aerion'
     },
     {
         title: 'Random user generator',
@@ -30,6 +30,14 @@ const data = [
         text: 'A random user generator App',
         live: 'https://rug-random-user-generator.netlify.app',
         git: 'https://github.com/leanug/random-user-generator'
+    },
+    {
+        title: 'React UI Components',
+        categories: 'gatsby, styled components',
+        image: '',
+        text: 'A small collection of UI Components',
+        live: 'https://ruc-react-ui-components.netlify.app',
+        git: 'https://github.com/leanug/react-ui-components'
     },
 ]
 
