@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     author: "Leandro Ubilla Gonzalez",
-    description: `Leandro is a front end web developer who specializes in building accessible and performant websites.`,
+    description: `Front end developer and Designer.`,
     siteUrl: "https://www.leandroubilla.com",
     title: "Leandro Ubilla Gonzalez",
   },
@@ -21,15 +21,35 @@ module.exports = {
       __key: "images",
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `projects`,
+        path: `${__dirname}/src/projects/`,
+      },
+      __key: "projects",
+    },
+    {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
           `rubik`,
           `poppins`,
-          `VT323`,
         ],
         display: 'swap'
       }
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              quality: 100
+            },
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-google-gtag`,

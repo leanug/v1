@@ -1,36 +1,38 @@
 import React from 'react'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
+import GitHub from '../icons/GitHub'
+import { Link } from 'gatsby'
+import LinkIcon from '../icons/Link'
 import styled from 'styled-components'
 
-const Item = ({ categories, title, image, text, live, git }) => {
+const Item = ({ category, excerpt, image, live, github, slug, tags, title }) => {
     const img = getImage( image )
-    const categoriesAry = categories.split(',')
-
+   
     return (
         <Wrapper>
-            { image && 
-                <a className="link-img" href={ live }>
+            {image && 
+                <Link className="link-img" to={ slug }>
                     <GatsbyImage 
                         imgClassName="img" 
                         image={ img } alt={ title }
                         loading="lazy"
                     />
-                </a>
+                </Link>
             }
-            <div className="container">
-                <a href={ live }>
-                    <h3 className="mb-10">{ title }</h3>
-                </a>
-                <div>
-                    { categoriesAry.map(( cat, index ) => (
-                        <span className="category" key={ index }>{ cat }</span>
+            <div style={{ marginTop: '1.2rem' }}>
+                <span className="category">{ category }</span>
+                <Link to={ slug }>
+                    <h3>{ title }</h3>
+                </Link>
+                <div style={{ marginTop: '.5rem' }}>
+                    {tags && tags.map(( tag, index ) => (
+                        <span style={{ marginRight: '1rem' }} key={ index }>{ tag }</span>
                     ))}
                 </div>
-                <p className="mt-10">{ text }</p>
+                <p className="mt-10">{ excerpt }</p>
                 <div className="links">
-                    { live && <a className="link" href={ live }><FaExternalLinkAlt /><span>live site</span></a> }
-                    { git && <a className="link" href={ git }><FaGithub /><span>github</span></a> }
+                    { live && <a className="link" href={ live }><LinkIcon /><span>live site</span></a> }
+                    { github && <a className="link" href={ github }><GitHub /><span>github</span></a> }
                 </div>
             </div>
         </Wrapper>
@@ -53,20 +55,14 @@ const Wrapper = styled.article`
         }
     }
 
-    .link-img {       
-        display: inline-block;
-        margin-bottom: 3rem;
- 
-        @media screen and ( min-width: 920px ) {
-            margin-bottom: 6rem;
-        }
-    }
-
     .category {
-        text-transform: capitalize;
-        margin-right: 2rem;
-        height: 100%;
-        width: 100%;
+        background-color: ${({ theme }) => theme.epsilon };
+        border-radius: var(--radius-alpha);
+        display: inline-block;
+        font-size: var(--fs-small);
+        margin: 1rem 0;
+        padding: .8rem 1.6rem;
+        text-transform: uppercase;
     }
     
     span {
@@ -91,11 +87,6 @@ const Wrapper = styled.article`
         a {
             margin-right: 2rem;
         }
-    }
-
-    .container {
-        display: flex;
-        flex-direction: column;
     }
 
     .icon {

@@ -81,6 +81,12 @@ const Layout = ({ children }) => {
 const PageWrapper = styled.div`
   display: grid;
   grid-template-rows: auto 1fr;
+  margin: auto;
+  max-width: var(--max-width);
+
+  main {
+    margin: 0 2rem;
+  }
 `
 
 const Overlay = styled.div`

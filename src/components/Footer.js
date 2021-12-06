@@ -1,19 +1,25 @@
 import React from 'react'
+import GitHub from './icons/GitHub'
+import Netlify from './icons/Netlify'
+import Gatsby from './icons/Gatsby'
 import styled from 'styled-components'
-import { SiGithub, SiGatsby, SiNetlify } from 'react-icons/si'
 
 const Footer = () => {
     return (
         <Wrapper className="mb-20">
-            <span>
-                <a href="https://github.com/leanug/v1"><SiGithub className="icon" />Source</a>
-            </span>
-            <span>
-                <a href="https://www.gatsbyjs.com"><SiGatsby className="icon" />Built with Gatsby</a>
-            </span>
-            <span>
-                <a href="https://www.netlify.com"><SiNetlify className="icon" />Hosted on Netlify</a>
-            </span>
+            <a href="https://github.com/leanug/v1">
+                <GitHub />
+                <span>Source</span> 
+            </a>
+            <a href="https://www.gatsbyjs.com">
+                <Gatsby />
+                <span>Built with Gatsby</span>
+            
+            </a>
+            <a href="https://www.netlify.com">
+                <Netlify />
+                <span>Hosted on Netlify</span>
+            </a>
         </Wrapper>
     )
 }
@@ -24,22 +30,20 @@ const Wrapper = styled.footer`
     @media screen and ( min-width: 576px ) {
         display: flex;
         justify-content: center;
+
+        a {
+            margin: 0 1rem;
+        }
     }
 
     span {
-        margin: 0 2rem;
+        margin-left: .5rem;
     }
 
     a {
         display: flex;
         align-items: center;
         font-size: 1.4rem;    
-    }
-
-    .icon {
-        height: 24px;
-        margin-right: 1rem;
-        width: 24px;
     }
 `
 

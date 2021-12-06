@@ -4,13 +4,14 @@ const Globals = createGlobalStyle`
     :root {
         --primary-font: "Rubik", Roboto, Helvetica, Arial, sans-serif;
         --secondary-font: "Poppins", Roboto, Helvetica, Arial, sans-serif;
-        --dos-font: 'VT323', monospace;
         --radius-alpha: 0.5rem;
         --radius-beta: 1rem;
         --radius-gamma: 50%;
+        --fs-small: 1.4rem;
         --line-height-alpha: 1.5;
         --line-height-beta: 2;
-        --max-width: 160rem;
+        --content-width: 80rem;
+        --max-width: 190rem;
     }
 
     *,
@@ -48,7 +49,7 @@ const Globals = createGlobalStyle`
         padding-right: calc(2rem + 4vw);
 
         @media screen and ( max-width: 576px ) {
-            padding: 0 2rem;
+            padding: 0;
         }
     }
 
@@ -200,8 +201,9 @@ const Globals = createGlobalStyle`
         font-size: 1.4rem;
     }
 
-    a {
+    a, button {
         color: ${({ theme }) => theme.psi };
+        cursor: pointer;
         text-decoration: none;
         transition: color 0.25s linear;
     }
@@ -334,25 +336,17 @@ const Globals = createGlobalStyle`
         margin-right: 2rem;
     }
 
-    .mx-auto {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .pt-60 {
-        padding-top: 6rem;
-    }
-
-    .pt-100 {
-        padding-top: 10rem;
-    }
-
-    .pb-60 {
-        padding-bottom: 6rem;
-    }
-
-    .pb-100 {
-        padding-bottom: 10rem;
+    .mdx-img .gatsby-resp-image-wrapper,
+    .mdx-img .gatsby-resp-image-image,
+    .mdx-img .gatsby-resp-image-background-image {
+        border-radius: var(--radius-alpha);
+        max-width: var(--content-width) !important;
+        object-fit: cover;
+        width: 100%;
+        
+        &:not(:last-of-type) {
+            margin-bottom: 3rem;
+        }
     }
 `
 

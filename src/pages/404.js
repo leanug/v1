@@ -1,12 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Layout from "../components/Layout"
 import Seo from '../components/SEO'
 import styled from 'styled-components'
 
 const NotFoundPage = () => {
     return (
-        <Layout>
+        <>
             <Seo 
                 title="404 - Page not found"
             />
@@ -17,7 +16,7 @@ const NotFoundPage = () => {
                     <Link className="button" to="/">Home</Link>
                 </div>
             </Wrapper>
-        </Layout>
+        </>
     )
 }
 

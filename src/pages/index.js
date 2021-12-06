@@ -1,13 +1,27 @@
-import React from 'react'
-import Layout from "../components/Layout"
-import Portfolio from "../components/Portfolio"
+import React, { useState } from 'react'
+import { graphql } from "gatsby"
+import Projects from '../components/Projects'
 import SectionTitle from '../components/SectionTitle'
 import Seo from '../components/SEO'
 import styled from 'styled-components'
 
-const IndexPage = () => {
+const IndexPage = ({ data: { allMdx: { nodes: allProjects } } }) => {
+    const [projects, setProjects] = useState(allProjects)
+    
+    const changeCat = cat => {
+        if (cat === 'all') {
+            setProjects(allProjects)
+            return
+        }
+
+        const filteredProjects = allProjects.filter(
+            ({ frontmatter: { category } }) => category === cat
+        )
+        setProjects(filteredProjects)
+    }
+
     return (
-        <Layout>
+        <>
             <Seo />
             <article className="wrapper-fluid mt-100 section-mb">
                 <section className="section-mb">
@@ -15,14 +29,19 @@ const IndexPage = () => {
                     <span className="mr-10 t-delta">Hello</span>👋
                     <h1 className="display-two mt-20">
                         My name is Leandro,<br />
-                        I'm a web developer from Uruguay.<br />
-                        I build and occasionally design accessible and performant React websites. 
+                        I'm a web developer and designer from Uruguay.<br />
+                        I build and occasionally design accessible and performant websites.<br />
+                        I'm available for hire.
                     </h1>
                 </section>
             
                 <section className="section-mb" id="projects">
                     <SectionTitle title="Projects" number="01." />
-                    <Portfolio />
+                    <CategoryBtn onClick={ ()=>changeCat('all') }>All</CategoryBtn>
+                    <CategoryBtn onClick={ ()=>changeCat('react') }>React</CategoryBtn>
+                    <CategoryBtn onClick={ ()=>changeCat('gatsby') }>Gatsby</CategoryBtn>
+                    <CategoryBtn onClick={ ()=>changeCat('design') }>Design</CategoryBtn>
+                    <Projects projects={ projects } />
                 </section>
 
                 <section className="section-mb" id="about">
@@ -73,9 +92,48 @@ const IndexPage = () => {
                     </a>
                 </section>
             </article>
-        </Layout>
+        </>
     )
 }
+
+export const query = graphql`
+  {
+    allMdx(sort: {order: DESC, fields: frontmatter___date}) {
+      nodes {
+        frontmatter {
+          category
+          excerpt
+          github
+          image {
+            id
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED, quality: 100, height: 435, width: 580)
+            }
+          }
+          live
+          slug
+          tags
+          title
+        }
+      }
+    }
+  }
+`
+
+const CategoryBtn = styled.button`
+    background-color: transparent;
+    border: 1px solid ${({ theme }) => theme.gamma };
+    border-radius: var(--radius-alpha);
+    cursor: pointer;
+    font-size: var(--fs-small);
+    margin: 0 1rem 1rem 0;
+    padding: .8rem 2rem;
+    transition: background-color 0.2s;
+
+    &:hover {
+        background-color: ${({ theme }) => theme.epsilon };
+    }
+`
 
 const Line = styled.div`
     height: 1px;

@@ -1,18 +1,21 @@
 import React from 'react'
-import { BsMoon } from 'react-icons/bs'
-import { FaBars } from 'react-icons/fa'
+import Burger from './icons/Burger'
 import links from '../constants/links'
+import Moon from './icons/Moon'
 import styled from 'styled-components'
+import Sun from './icons/Sun'
+import Logo from './Logo'
 
-const Navbar = ({ toggleTheme, toggleSidebar, scrollToSection }) => {
+const Navbar = ({ toggleTheme, toggleSidebar, scrollToSection, theme }) => {
     const showNavbar = typeof window !== 'undefined' 
+    /* Show the navbar only in the home page */
     ? window.location.pathname === '/' ? true : false 
     : true;
     
     return (
         <Header className="wrapper-fluid">
             <div>
-                <span className="logo">L:&#10095; UG</span>
+                <Logo />
                 <span className="cursor"></span>
             </div>
             <div>
@@ -20,8 +23,8 @@ const Navbar = ({ toggleTheme, toggleSidebar, scrollToSection }) => {
                     return (
                         <button
                             key={ index }
-                            onClick={() => scrollToSection( `${ item.url }` )}
-                            onKeyPress={() => scrollToSection( `${ item.url }` )}
+                            onClick={ () => scrollToSection( `${ item.url }`) }
+                            onKeyPress={ () => scrollToSection( `${ item.url }`) }
                             aria-label={ `scroll to ${ item.title } section` }
                             className="nav-btn"
                         >
@@ -35,13 +38,14 @@ const Navbar = ({ toggleTheme, toggleSidebar, scrollToSection }) => {
                     aria-label="scroll to contact section"
                     className="aside-btn"
                 >
-                    <FaBars className="icon" />
+                    <Burger />
                 </button>
                 <ThemeTogglerBtn
                     aria-label="Dark or light website theme toggler"
                     onClick={ toggleTheme }
                 >
-                    <BsMoon className="icon moon" />
+                    { theme === 'light' && <Sun /> }
+                    { theme === 'dark' && <Moon /> }
                 </ThemeTogglerBtn>
             </div>
         </Header>
@@ -55,11 +59,12 @@ const Header = styled.header`
     height: 6rem;
     justify-content: space-between;
     margin-top: 4rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
     transition: color 0.3s linear;
 
     .logo {
         display: flex;
-        font-family: var(--dos-font);
         font-size: 2rem;
     }
 

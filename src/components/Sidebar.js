@@ -1,5 +1,5 @@
 import React from 'react'
-import { IoMdClose } from 'react-icons/io'
+import Close from './icons/Close'
 import links from '../constants/links'
 import styled from 'styled-components'
 
@@ -21,7 +21,7 @@ const Sidebar = ({ showSidebar, toggleSidebar, scrollToSection }) => {
             className="close-btn"
             aria-label="Close sidebar"
           >
-            <IoMdClose />
+            <Close />
           </button>
       </div>
       <div className="sidebar-content">
@@ -42,7 +42,6 @@ const Sidebar = ({ showSidebar, toggleSidebar, scrollToSection }) => {
             )
           })}
         </div>
-        
       </div>
     </Wrapper>
   )
