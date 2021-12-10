@@ -43,7 +43,8 @@ const Wrapper = styled.footer`
     a {
         display: flex;
         align-items: center;
-        font-size: 1.4rem;    
+        font-size: 1.4rem;
+        padding: .5rem 0;
     }
 `
 

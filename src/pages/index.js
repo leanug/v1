@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { graphql } from "gatsby"
+import styled from 'styled-components'
+
+// Components
 import Projects from '../components/Projects'
 import SectionTitle from '../components/SectionTitle'
 import Seo from '../components/SEO'
-import styled from 'styled-components'
 
 const IndexPage = ({ data: { allMdx: { nodes: allProjects } } }) => {
     const [projects, setProjects] = useState(allProjects)
@@ -42,6 +44,7 @@ const IndexPage = ({ data: { allMdx: { nodes: allProjects } } }) => {
                     <CategoryBtn onClick={ ()=>changeCat('gatsby') }>Gatsby</CategoryBtn>
                     <CategoryBtn onClick={ ()=>changeCat('design') }>Design</CategoryBtn>
                     <Projects projects={ projects } />
+                    <h3 style={{ marginTop: '4rem' }}>More projects</h3>
                 </section>
 
                 <section className="section-mb" id="about">
@@ -98,7 +101,7 @@ const IndexPage = ({ data: { allMdx: { nodes: allProjects } } }) => {
 
 export const query = graphql`
   {
-    allMdx(sort: {order: DESC, fields: frontmatter___date}) {
+    allMdx(sort: { order: DESC, fields: frontmatter___date }) {
       nodes {
         frontmatter {
           category
