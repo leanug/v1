@@ -44,7 +44,6 @@ const IndexPage = ({ data: { allMdx: { nodes: allProjects } } }) => {
                     <CategoryBtn onClick={ ()=>changeCat('gatsby') }>Gatsby</CategoryBtn>
                     <CategoryBtn onClick={ ()=>changeCat('design') }>Design</CategoryBtn>
                     <Projects projects={ projects } />
-                    <h3 style={{ marginTop: '4rem' }}>More projects</h3>
                 </section>
 
                 <section className="section-mb" id="about">

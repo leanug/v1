@@ -44,6 +44,7 @@ const Wrapper = styled.footer`
         display: flex;
         align-items: center;
         font-size: 1.4rem;
+        height: 3.9rem;
         padding: .5rem 0;
     }
 `
