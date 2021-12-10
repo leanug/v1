@@ -348,6 +348,19 @@ const Globals = createGlobalStyle`
             margin-bottom: 3rem;
         }
     }
+
+    .mdx-img-wide .gatsby-resp-image-wrapper,
+    .mdx-img-wide .gatsby-resp-image-image,
+    .mdx-img-wide .gatsby-resp-image-background-image {
+        border-radius: var(--radius-alpha);
+        max-width: 1024 !important;
+        object-fit: cover;
+        width: 100% !important;
+        
+        &:not(:last-of-type) {
+            margin-bottom: 3rem;
+        }
+    }
 `
 
 export default Globals

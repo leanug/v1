@@ -95,6 +95,10 @@ const Header = styled.header`
         }
     }
 
+    .nav-btn:hover {
+        color: ${({ theme }) => theme.delta };
+    }
+
     .nav-btn:before {
         margin-right: 0.5rem;
         font-size: 1.2rem;

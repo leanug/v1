@@ -21,9 +21,11 @@ const Item = ({ category, excerpt, image, live, github, slug, tags, title }) => 
             }
             <div style={{ marginTop: '1.2rem' }}>
                 <span className="category">{ category }</span>
-                <Link to={ slug }>
-                    <h3>{ title }</h3>
-                </Link>
+                <div>
+                    <Link className="red-hover-link" to={ slug }>
+                        <h3>{ title }</h3>
+                    </Link>
+                </div>
                 <div style={{ marginTop: '.5rem' }}>
                     {tags && tags.map(( tag, index ) => (
                         <span style={{ marginRight: '1rem' }} key={ index }>{ tag }</span>
@@ -31,8 +33,8 @@ const Item = ({ category, excerpt, image, live, github, slug, tags, title }) => 
                 </div>
                 <p className="mt-10">{ excerpt }</p>
                 <div className="links">
-                    { live && <a className="link" href={ live }><LinkIcon /><span>live site</span></a> }
-                    { github && <a className="link" href={ github }><GitHub /><span>github</span></a> }
+                    { live && <a className="link red-hover-link" href={ live }><LinkIcon /><span>live site</span></a> }
+                    { github && <a className="link red-hover-link" href={ github }><GitHub /><span>github</span></a> }
                 </div>
             </div>
         </Wrapper>
@@ -62,9 +64,21 @@ const Wrapper = styled.article`
         font-size: var(--fs-small);
         margin: 1rem 0;
         padding: .8rem 1.6rem;
-        text-transform: uppercase;
+        text-transform: capitalize;
     }
     
+    .red-hover-link {
+        transition: color 0.3s;
+    }
+
+    .red-hover-link:hover {
+        color: ${({ theme }) => theme.delta };
+    }
+
+    h3 {
+        display: inline-block;
+    }
+
     span {
         font-size: 1.4rem;
     }
