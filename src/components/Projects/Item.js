@@ -48,13 +48,6 @@ const Wrapper = styled.article`
 
     .img {
         border-radius: var(--radius-alpha);
-        filter: grayscale(100%);
-        transition: filter 0.25s linear;
-        -webkit-transition : -webkit-filter 0.25s linear;
-
-        &:hover {
-            filter: grayscale(0);
-        }
     }
 
     .category {
